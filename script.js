@@ -2322,7 +2322,7 @@ class TeamSlider {
 // This function is for Cloudflare Turnstile.
 function onloadTurnstileCallback() {
     turnstile.render("#cf-widget", {
-        sitekey: "0x4AAAAAAABoSTMjOilErbzTl",
+        sitekey: "0x4AAAAAABoSTMjOilErbzTl",
         callback: function (token) {
             console.log(`Challenge Success: ${token}`);
             document.querySelector("body").style.display = "block";
