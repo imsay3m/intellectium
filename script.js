@@ -2324,12 +2324,13 @@ class TeamSlider {
 // This function is for Cloudflare Turnstile.
 function onloadTurnstileCallback() {
     turnstile.render("#cf-widget", {
-        sitekey: "0x4AAAAAABoSTHfGEBpiMyTmyrq0cI1aC6o",
+        sitekey: "0x4AAAAAABoTurHcVtwTWmsg",
         callback: function (token) {
             console.log(`Challenge Success: ${token}`);
             document.querySelector("body").style.display = "block";
             document.querySelector("#cf-widget").style.display = "none";
         },
+        action: "contact-form",
     });
 }
 
