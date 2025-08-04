@@ -715,7 +715,7 @@ class ExecutiveSlider {
         }, 150);
 
         console.log(`Clicked on Executive Member ${index + 1}`);
-        this.showMemberDetails(index);
+        // this.showMemberDetails(index);
     }
 
     showMemberDetails(index) {
