@@ -2360,9 +2360,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("loaded");
         }, 100);
 
-        // console.log(
-        //     "🚀 Intellectium website loaded successfully with enhanced performance and responsiveness!"
-        // );
     } catch (error) {
         console.error("Error initializing website:", error);
     }
