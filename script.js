@@ -418,9 +418,9 @@ class ExecutiveSlider {
         this.updateSlider();
         this.startAutoPlay();
 
-        console.log(
-            `Executive Slider initialized with ${this.cards.length} members, ${this.totalSlides} slides, ${this.cardsPerSlide} cards per slide`
-        );
+        // console.log(
+        //     `Executive Slider initialized with ${this.cards.length} members, ${this.totalSlides} slides, ${this.cardsPerSlide} cards per slide`
+        // );
     }
 
     calculateSlides() {
@@ -714,7 +714,7 @@ class ExecutiveSlider {
             card.style.transform = "";
         }, 150);
 
-        console.log(`Clicked on Executive Member ${index + 1}`);
+        // console.log(`Clicked on Executive Member ${index + 1}`);
         // this.showMemberDetails(index);
     }
 
@@ -2183,16 +2183,22 @@ class TeamSlider {
             this.cards.length
         );
 
+        // Animate the cards into view by re-triggering CSS animations
         for (let i = startIndex; i < endIndex; i++) {
             const card = this.cards[i];
             if (card) {
-                card.style.opacity = "0";
-                card.style.transform = "translateY(20px)";
+                // Remove animation classes to allow them to be re-triggered
+                card.classList.remove("slide-in-left", "slide-in-right");
+
+                // A tiny delay is needed to allow the browser to process the class removal
+                // before adding it back, which re-triggers the CSS animation. This is a
+                // more performant way to handle animations than direct style manipulation.
                 setTimeout(() => {
-                    card.style.transition = "all 0.6s ease-out";
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-                }, (i - startIndex) * 100);
+                    // Use existing slide-in animations for a consistent feel
+                    card.classList.add(
+                        i % 2 === 0 ? "slide-in-left" : "slide-in-right"
+                    );
+                }, 10 + (i - startIndex) * 50); // Stagger the animation
             }
         }
     }
@@ -2238,7 +2244,7 @@ class TeamSlider {
             card.style.transform = "";
         }, 150);
 
-        console.log(`Clicked on Team Member ${index + 1}`);
+        // console.log(`Clicked on Team Member ${index + 1}`);
     }
 
     startAutoPlay() {
@@ -2352,9 +2358,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("loaded");
         }, 100);
 
-        console.log(
-            "🚀 Intellectium website loaded successfully with enhanced performance and responsiveness!"
-        );
+        // console.log(
+        //     "🚀 Intellectium website loaded successfully with enhanced performance and responsiveness!"
+        // );
     } catch (error) {
         console.error("Error initializing website:", error);
     }
