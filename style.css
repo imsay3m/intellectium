@@ -41,6 +41,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* CF widget on the screen */
+#cf-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--navy);
+}
+
 /* Loading Screen */
 .loading-screen {
     position: fixed;
