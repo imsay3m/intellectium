@@ -2319,6 +2319,18 @@ class TeamSlider {
     }
 }
 
+// This function is for Cloudflare Turnstile.
+function onloadTurnstileCallback() {
+    turnstile.render("#cf-widget", {
+        sitekey: "0x4AAAAAAABoSTMjOilErbzTl",
+        callback: function (token) {
+            console.log(`Challenge Success: ${token}`);
+            document.querySelector("body").style.display = "block";
+            document.querySelector("#cf-widget").style.display = "none";
+        },
+    });
+}
+
 // Initialize all controllers
 let loadingManager,
     mobileMenuController,
@@ -2407,16 +2419,3 @@ const fadeInCSS = `
 const styleElement = document.createElement("style");
 styleElement.textContent = fadeInCSS;
 document.head.appendChild(styleElement);
-
-window.onloadTurnstileCallback = function () {
-    turnstile.render("#cf-widget", {
-        sitekey: "0x4AAAAAABoSTMjOilErbzTl",
-        callback: function (token) {
-            console.log(`Challenge Success ${token}`);
-            setTimeout(() => {
-                $("body").style.display = "block";
-                $("#cf-widget").style.display = "none";
-            }, 2000);
-        },
-    });
-};
