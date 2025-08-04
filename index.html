@@ -53,6 +53,10 @@
         ></script>
         <!-- Link to your compiled CSS file. The existing style.css can be used as the output. -->
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+            defer
+        ></script>
 
         <!-- Favicon and meta tags -->
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -359,7 +363,7 @@
                                 <div>
                                     <div class="mb-8">
                                         <p class="text-accent font-medium mb-2">
-                                            WELCOME TO INTELLECTIUM
+                                            OUR PROUD RECOGNITION
                                         </p>
                                         <h2
                                             class="text-3xl md:text-4xl font-bold text-navy mb-4"
@@ -1136,10 +1140,10 @@
                 </div>
 
                 <div class="relative">
-                    <div class="executive-slider-wrapper overflow-hidden">
+                    <div class="executive-slider-wrapper overflow-hidden py-4">
                         <div
                             id="executive-slider"
-                            class="executive-slider flex transition-transform duration-700 ease-in-out"
+                            class="executive-slider flex transition-transform duration-700 ease-in-out lg:py-8 py-4"
                             style="transform: translateX(0%)"
                         >
                             <!-- Member Card 1 -->
@@ -1428,6 +1432,28 @@
                                     >
                                         <img
                                             src="images/executive/13.jpg"
+                                            alt="Executive Council Member 13"
+                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        ></div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-accent/30 transition-colors duration-500"
+                                    ></div>
+                                </div>
+                            </div>
+                            <!-- Member Card 14 -->
+                            <div class="executive-card flex-shrink-0">
+                                <div
+                                    class="executive-card-inner group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                                >
+                                    <div
+                                        class="relative aspect-square overflow-hidden"
+                                    >
+                                        <img
+                                            src="images/executive/14.jpg"
                                             alt="Executive Council Member 13"
                                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -4098,6 +4124,7 @@
         <button id="click-to-top" class="click-to-top" aria-label="Back to top">
             <i data-lucide="arrow-up"></i>
         </button>
+        <div id="cf-widget"></div>
 
         <script src="script.js" defer></script>
     </body>

@@ -2407,3 +2407,16 @@ const fadeInCSS = `
 const styleElement = document.createElement("style");
 styleElement.textContent = fadeInCSS;
 document.head.appendChild(styleElement);
+
+window.onloadTurnstileCallback = function () {
+    turnstile.render("#cf-widget", {
+        sitekey: "0x4AAAAAABoSTMjOilErbzTl",
+        callback: function (token) {
+            console.log(`Challenge Success ${token}`);
+            setTimeout(() => {
+                $("body").style.display = "block";
+                $("#cf-widget").style.display = "none";
+            }, 2000);
+        },
+    });
+};
