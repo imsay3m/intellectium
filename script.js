@@ -417,6 +417,7 @@ class ExecutiveSlider {
         this.setupIntersectionObserver();
         this.updateSlider();
         this.startAutoPlay();
+        setTimeout(() => this.handleResize(), 100);
 
         // console.log(
         //     `Executive Slider initialized with ${this.cards.length} members, ${this.totalSlides} slides, ${this.cardsPerSlide} cards per slide`
@@ -1944,6 +1945,7 @@ class TeamSlider {
         this.setupIntersectionObserver();
         this.updateSlider();
         this.startAutoPlay();
+        setTimeout(() => this.handleResize(), 100);
 
         console.log(
             `Team Slider initialized with ${this.cards.length} members, ${this.totalSlides} slides, ${this.cardsPerSlide} cards per slide`
@@ -2322,7 +2324,7 @@ class TeamSlider {
 // This function is for Cloudflare Turnstile.
 function onloadTurnstileCallback() {
     turnstile.render("#cf-widget", {
-        sitekey: "0x4AAAAAABoSTMjOilErbzTl",
+        sitekey: "0x4AAAAAABoSTHfGEBpiMyTmyrq0cI1aC6o",
         callback: function (token) {
             console.log(`Challenge Success: ${token}`);
             document.querySelector("body").style.display = "block";
