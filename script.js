@@ -843,7 +843,7 @@ class ExecutiveSlider {
     }
 }
 
-// Enhanced Slider Class with Fixed Mobile Issues
+// Enhanced Slider Class
 class EnhancedSlider {
     constructor(sliderId, options = {}) {
         this.slider = utils.$(`#${sliderId}`);
@@ -1110,7 +1110,7 @@ class EnhancedSlider {
         }
     }
 }
-// Enhanced Past Events Slider Class
+// Past Events Slider Class
 class PastEventsSlider {
     constructor() {
         this.slider = utils.$("#past-events-slider");
@@ -2359,7 +2359,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             document.body.classList.add("loaded");
         }, 100);
-
     } catch (error) {
         console.error("Error initializing website:", error);
     }
